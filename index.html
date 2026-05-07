@@ -105,6 +105,29 @@
     .legal-links a:hover {
       text-decoration: underline;
     }
+    .cta-row {
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff2f7d, #ff5a8a);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 35px rgba(255, 47, 125, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.note {
+  font-size: 14px;
+  color: #94a3b8;
+}
 
     footer {
       text-align: center;
@@ -124,6 +147,12 @@
     StreamTrigger is a desktop application that helps streamers manage TikTok LIVE interactions
     and trigger real-time actions based on viewer activity.
   </p>
+  <div class="cta-row">
+  <a class="btn" href="#connect-tiktok">Connect with TikTok</a>
+</div>
+<p class="note">
+  TikTok Login is used to let creators connect their TikTok account before using StreamTrigger features.
+</p>
 </header>
 
 <main class="container">
@@ -180,6 +209,22 @@
     </ol>
   </section>
 
+  <section class="card" id="connect-tiktok">
+  <h2>Connect with TikTok</h2>
+  <p>
+    StreamTrigger uses TikTok Login so creators can connect their TikTok account and authorize supported TikTok features before using the desktop application.
+  </p>
+  <p>
+    The login process starts from the StreamTrigger desktop app and is used only to connect the creator’s TikTok account for streamer-facing tools such as LIVE interaction processing, alerts, points, rankings, and automation.
+  </p>
+  <div class="cta-row">
+    <a class="btn" href="#contact">Request Access / Connect TikTok</a>
+  </div>
+  <p class="note">
+    If you are reviewing this app, this section is the public login entry point explanation for TikTok connection.
+  </p>
+</section>
+
   <section class="card">
     <h2>Use Case</h2>
     <p>
@@ -217,7 +262,7 @@
     </p>
   </section>
 
-  <section class="card">
+  <section class="card" id="contact">
     <h2>Contact</h2>
     <p>
       For support or review questions, contact:
