@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TikTok Connected | StreamTrigger</title>
+
+  <style>
+    body{
+      font-family:Arial;
+      background:#070b1f;
+      color:white;
+      padding:40px;
+      text-align:center;
+    }
+
+    .box{
+      max-width:700px;
+      margin:auto;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:20px;
+      padding:40px;
+    }
+
+    h1{
+      color:#ff2f7d;
+    }
+
+    p{
+      color:#cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>TikTok Authorization Completed</h1>
+
+  <p>
+    Your TikTok account was connected successfully.
+  </p>
+
+  <p>
+    You can now return to StreamTrigger.
+  </p>
+
+  <div id="status"></div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const code = params.get("code");
+const error = params.get("error");
+
+const status = document.getElementById("status");
+
+if(error){
+  status.innerHTML =
+    `<p style="color:#ff6b6b;">Error: ${error}</p>`;
+}
+
+if(code){
+
+  status.innerHTML =
+    `<p style="color:#4ade80;">
+      Authorization code received successfully.
+    </p>`;
+
+  console.log("TikTok code:", code);
+}
+
+</script>
+
+</body>
+</html>
