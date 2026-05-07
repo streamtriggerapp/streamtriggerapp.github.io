@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StreamTrigger | TikTok LIVE Automation Desktop App</title>
-  <meta name="description" content="StreamTrigger is a desktop app for streamers that connects to TikTok LIVE and helps manage real-time viewer interactions, points, rankings, alerts and automation." />
+
+  <meta
+    name="description"
+    content="StreamTrigger is a desktop app for streamers that connects to TikTok LIVE and helps manage real-time viewer interactions, points, rankings, alerts and automation."
+  />
 
   <style>
     * {
@@ -105,29 +109,35 @@
     .legal-links a:hover {
       text-decoration: underline;
     }
+
     .cta-row {
-  margin-top: 28px;
-}
+      margin-top: 28px;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #ff2f7d, #ff5a8a);
-  color: white;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 12px 35px rgba(255, 47, 125, 0.35);
-}
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff2f7d, #ff5a8a);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 35px rgba(255, 47, 125, 0.35);
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
 
-.btn:hover {
-  transform: translateY(-1px);
-}
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
 
-.note {
-  font-size: 14px;
-  color: #94a3b8;
-}
+    .note {
+      font-size: 14px;
+      color: #94a3b8;
+    }
 
     footer {
       text-align: center;
@@ -142,64 +152,81 @@
 
 <header>
   <span class="badge">Desktop App for TikTok LIVE Streamers</span>
+
   <h1>StreamTrigger</h1>
+
   <p class="hero-text">
     StreamTrigger is a desktop application that helps streamers manage TikTok LIVE interactions
     and trigger real-time actions based on viewer activity.
   </p>
+
   <div class="cta-row">
-  <a class="btn" href="#connect-tiktok">Connect with TikTok</a>
-</div>
-<p class="note">
-  TikTok Login is used to let creators connect their TikTok account before using StreamTrigger features.
-</p>
+    <button class="btn" onclick="loginTikTok()">
+      Connect with TikTok
+    </button>
+  </div>
+
+  <p class="note">
+    TikTok Login is used to let creators connect their TikTok account before using StreamTrigger features.
+  </p>
 </header>
 
 <main class="container">
 
   <section class="card">
     <h2>What is StreamTrigger?</h2>
+
     <p>
       StreamTrigger connects to TikTok LIVE sessions and listens for real-time viewer events such as
-      likes, gifts, chat messages, follows, and other live interactions. Streamers can use these events
-      to power points, rankings, alerts, sounds, overlays, webhooks, and automation tools.
+      likes, gifts, chat messages, follows, and other live interactions.
+      Streamers can use these events to power points, rankings, alerts,
+      sounds, overlays, webhooks, and automation tools.
     </p>
   </section>
 
   <section class="grid">
+
     <div class="card">
       <h3>Live Event Detection</h3>
+
       <p>
-        Receive TikTok LIVE events in real time, including likes, gifts, chat messages, follows,
-        and viewer interactions.
+        Receive TikTok LIVE events in real time, including likes,
+        gifts, chat messages, follows, and viewer interactions.
       </p>
     </div>
 
     <div class="card">
       <h3>Points & Ranking System</h3>
+
       <p>
-        Reward viewers automatically with points, levels, and rankings based on their engagement
-        during live sessions.
+        Reward viewers automatically with points, levels,
+        and rankings based on their engagement during live sessions.
       </p>
     </div>
 
     <div class="card">
       <h3>Automation Tools</h3>
+
       <p>
-        Trigger sounds, overlays, AutoHotkey actions, webhooks, and other streamer tools from live events.
+        Trigger sounds, overlays, AutoHotkey actions,
+        webhooks, and other streamer tools from live events.
       </p>
     </div>
 
     <div class="card">
       <h3>Desktop Control Panel</h3>
+
       <p>
-        Manage live activity, diagnostics, rankings, settings, integrations, and event triggers from one app.
+        Manage live activity, diagnostics, rankings,
+        settings, integrations, and event triggers from one app.
       </p>
     </div>
+
   </section>
 
   <section class="card">
     <h2>How It Works</h2>
+
     <ol class="steps">
       <li>The streamer opens the StreamTrigger desktop application.</li>
       <li>The streamer connects a TikTok LIVE username.</li>
@@ -210,60 +237,82 @@
   </section>
 
   <section class="card" id="connect-tiktok">
-  <h2>Connect with TikTok</h2>
-  <p>
-    StreamTrigger uses TikTok Login so creators can connect their TikTok account and authorize supported TikTok features before using the desktop application.
-  </p>
-  <p>
-    The login process starts from the StreamTrigger desktop app and is used only to connect the creator’s TikTok account for streamer-facing tools such as LIVE interaction processing, alerts, points, rankings, and automation.
-  </p>
-  <div class="cta-row">
-    <a class="btn" href="#contact">Request Access / Connect TikTok</a>
-  </div>
-  <p class="note">
-    If you are reviewing this app, this section is the public login entry point explanation for TikTok connection.
-  </p>
-</section>
+
+    <h2>Connect with TikTok</h2>
+
+    <p>
+      StreamTrigger uses TikTok Login so creators can connect their TikTok account
+      and authorize supported TikTok features before using the desktop application.
+    </p>
+
+    <p>
+      The login process starts from the StreamTrigger desktop app and is used only
+      to connect the creator’s TikTok account for streamer-facing tools such as
+      LIVE interaction processing, alerts, points, rankings, and automation.
+    </p>
+
+    <div class="cta-row">
+      <button class="btn" onclick="loginTikTok()">
+        Request Access / Connect TikTok
+      </button>
+    </div>
+
+    <p class="note">
+      If you are reviewing this app, this section is the public login entry point explanation for TikTok connection.
+    </p>
+
+  </section>
 
   <section class="card">
     <h2>Use Case</h2>
+
     <p>
-      StreamTrigger is designed for streamers who want to increase live engagement by turning viewer
-      activity into interactive rewards and automation. For example, viewers can earn points when they
-      like, comment, follow, or send gifts during a TikTok LIVE session.
+      StreamTrigger is designed for streamers who want to increase live engagement
+      by turning viewer activity into interactive rewards and automation.
+      For example, viewers can earn points when they like,
+      comment, follow, or send gifts during a TikTok LIVE session.
     </p>
   </section>
 
   <section class="card">
     <h2>Platform</h2>
+
     <p>
-      StreamTrigger is currently a <span class="highlight">desktop application</span>. It is intended for
-      creators and streamers who manage live sessions from a computer.
+      StreamTrigger is currently a
+      <span class="highlight">desktop application</span>.
+
+      It is intended for creators and streamers who manage live sessions from a computer.
     </p>
   </section>
 
   <section class="card">
     <h2>Data & Privacy</h2>
+
     <p>
-      StreamTrigger uses TikTok LIVE interaction data only to provide streamer-facing features such as
-      live activity, points, rankings, alerts, and automation. The app does not sell personal data.
+      StreamTrigger uses TikTok LIVE interaction data only to provide streamer-facing
+      features such as live activity, points, rankings, alerts, and automation.
+      The app does not sell personal data.
     </p>
+
     <p>
-      The application may process public live interaction data such as usernames, chat messages, likes,
-      gifts, and follows during a live session in order to provide its core functionality.
+      The application may process public live interaction data such as usernames,
+      chat messages, likes, gifts, and follows during a live session in order
+      to provide its core functionality.
     </p>
   </section>
 
   <section class="card">
     <h2>Development Status</h2>
+
     <p>
-      StreamTrigger is currently in active development. The application is being prepared for production use
-      and TikTok integration review.
+      StreamTrigger is currently in active development.
+      The application is being prepared for production use and TikTok integration review.
     </p>
   </section>
 
   <section class="card" id="contact">
     <h2>Contact</h2>
+
     <p>
       For support or review questions, contact:
       <br />
@@ -273,6 +322,7 @@
 
   <section class="card legal-links">
     <h2>Legal</h2>
+
     <a href="terms.html">Terms of Service</a>
     <a href="privacy.html">Privacy Policy</a>
   </section>
@@ -280,8 +330,34 @@
 </main>
 
 <footer>
-  © 2026 StreamTrigger. All rights reserved.
+  ©️ 2026 StreamTrigger. All rights reserved.
 </footer>
+
+<script>
+  function loginTikTok() {
+
+    const clientKey = "PON_AQUI_TU_CLIENT_KEY_REAL";
+
+    const redirectUri =
+      "https://streamtriggerapp.github.io/callback.html";
+
+    const scope = "user.info.basic";
+
+    const state = crypto.randomUUID();
+
+    const authUrl =
+      "https://www.tiktok.com/v2/auth/authorize/?" +
+      new URLSearchParams({
+        client_key: clientKey,
+        response_type: "code",
+        scope: scope,
+        redirect_uri: redirectUri,
+        state: state
+      }).toString();
+
+    window.location.href = authUrl;
+  }
+</script>
 
 </body>
 </html>
