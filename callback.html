@@ -106,8 +106,9 @@
   <script>
     const params = window.location.search;
     const hasCode = params.includes("code=");
-    const shouldSendToDesktop =
-      hasCode && params.includes("desktop=1");
+    const state = new URLSearchParams(window.location.search).get("state") || "";
+const shouldSendToDesktop =
+  hasCode && state.startsWith("desktop_");
 
     if (shouldSendToDesktop) {
       setTimeout(() => {
