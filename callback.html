@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <title>TikTok Connected | StreamTrigger</title>
 
+  <script>
+  const params = window.location.search;
+
+  if (params.includes("code=")) {
+    window.location.href = "http://127.0.0.1:8765/callback" + params;
+  }
+</script>
+
   <style>
     body{
       font-family:Arial;
