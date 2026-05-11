@@ -1,110 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png" />
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>TikTok Connected | StreamTrigger</title>
 
-  <script>
-  const params = window.location.search;
-
-  if (params.includes("code=")) {
-    window.location.href = "http://127.0.0.1:8765/callback" + params;
-  }
-</script>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    
-    .website-brand {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 30px;
-}
-
-.website-logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-}
-    body{
-      font-family:Arial;
-      background:#070b1f;
-      color:white;
-      padding:40px;
-      text-align:center;
+    * {
+      box-sizing: border-box;
     }
 
-    .box{
-      max-width:700px;
-      margin:auto;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:20px;
-      padding:40px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 47, 125, 0.22), transparent 35%),
+        linear-gradient(135deg, #070b1f, #121a4a);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
     }
 
-    h1{
-      color:#ff2f7d;
+    .callback-card {
+      width: 100%;
+      max-width: 720px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 28px;
+      padding: 42px;
+      text-align: center;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
     }
 
-    p{
-      color:#cbd5e1;
+    .callback-logo {
+      width: 86px;
+      height: 86px;
+      border-radius: 22px;
+      object-fit: cover;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      color: #ff4fa3;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    .success {
+      margin-top: 18px;
+      color: #4ade80;
+      font-weight: 800;
+    }
+
+    .note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff2f7d, #ff5a8a);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
     }
   </style>
 </head>
 
 <body>
-  <div class="website-brand">
-  <img src="favicon.png" class="website-logo" />
+  <div class="callback-card">
+    <img src="favicon.png" alt="StreamTrigger Logo" class="callback-logo" />
 
-  <div>
-    <h1>StreamTrigger</h1>
-    <p>TikTok Authorization</p>
+    <h1>TikTok Authorization Completed</h1>
+
+    <p>Your TikTok authorization was completed successfully.</p>
+    <p>You can now return to the StreamTrigger desktop app.</p>
+
+    <p class="success">Authorization code received successfully.</p>
+
+    <p class="note">
+      If the desktop app is open, StreamTrigger will try to complete the connection automatically.
+      If nothing happens, return to the desktop app and click Connect again.
+    </p>
+
+    <a class="btn" href="index.html">Back to StreamTrigger Website</a>
   </div>
-</div>
 
-<div class="box">
+  <script>
+    const params = window.location.search;
+    const hasCode = params.includes("code=");
+    const shouldSendToDesktop =
+      hasCode && params.includes("desktop=1");
 
-  <h1>TikTok Authorization Completed</h1>
-
-  <p>
-    Your TikTok account was connected successfully.
-  </p>
-
-  <p>
-    You can now return to StreamTrigger.
-  </p>
-
-  <div id="status"></div>
-
-</div>
-
-<script>
-
-const params = new URLSearchParams(window.location.search);
-
-const code = params.get("code");
-const error = params.get("error");
-
-const status = document.getElementById("status");
-
-if(error){
-  status.innerHTML =
-    `<p style="color:#ff6b6b;">Error: ${error}</p>`;
-}
-
-if(code){
-
-  status.innerHTML =
-    `<p style="color:#4ade80;">
-      Authorization code received successfully.
-    </p>`;
-
-  console.log("TikTok code:", code);
-}
-
-</script>
-
+    if (shouldSendToDesktop) {
+      setTimeout(() => {
+        window.location.href = "http://127.0.0.1:8765/callback" + params;
+      }, 1200);
+    }
+  </script>
 </body>
 </html>
